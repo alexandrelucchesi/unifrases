@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>UniFrases</title>
+
+    <link th:href="@{/resources/bootstrap/css/bootstrap.min.css}" href="../../resources/bootstrap/css/bootstrap.min.css"
+          rel="stylesheet" media="screen"/>
+    <link th:href="@{/resources/bootstrap/css/bootstrap-theme.min.css}"
+          href="../../resources/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"/>
+    <link th:href="@{/resources/assets/css/unifrases.css}" href="../../resources/assets/css/unifrases.css"
+          rel="stylesheet"
+          media="screen"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/html5shiv.js"></script>
+    <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@{/}">UniFrases</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a th:href="@{/}" href="#">Home</a></li>
+                    <li><a th:href="@{/search}" href="#search">About</a></li>
+                    <li><a th:href="@{/about}" href="#about">About</a></li>
+                    <li><a th:href="@{/contact}" href="#contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Add sentences</a></li>
+                            <li><a href="#">List sentences</a></li>
+                            <li><a href="#">Edit sentences</a></li>
+                            <li><a href="#">Delete sentences</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" placeholder="E-mail" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control"/>
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign in</button>
+                </form>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Welcome to UniFrases!</h1>
+
+            <p>This is a template for a simple marketing or informational website. It includes a large callout called
+                the hero unit and three supporting pieces of content. Use it as a starting point to create something
+                more unique.</p>
+
+            <p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        </div>
+    </div>
+
+    <!--<div class="container">-->
+    <!--&lt;!&ndash; Example row of columns &ndash;&gt;-->
+    <!--<div class="row">-->
+    <!--<div class="col-lg-4">-->
+    <!--<h2>Heading</h2>-->
+
+    <!--<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor-->
+    <!--mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna-->
+    <!--mollis euismod. Donec sed odio dui. </p>-->
+
+    <!--<p><a class="btn btn-default" href="#">View details &raquo;</a></p>-->
+    <!--</div>-->
+    <!--<div class="col-lg-4">-->
+    <!--<h2>Heading</h2>-->
+
+    <!--<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor-->
+    <!--mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna-->
+    <!--mollis euismod. Donec sed odio dui. </p>-->
+
+    <!--<p><a class="btn btn-default" href="#">View details &raquo;</a></p>-->
+    <!--</div>-->
+    <!--<div class="col-lg-4">-->
+    <!--<h2>Heading</h2>-->
+
+    <!--<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula-->
+    <!--porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,-->
+    <!--ut fermentum massa justo sit amet risus.</p>-->
+
+    <!--<p><a class="btn btn-default" href="#">View details &raquo;</a></p>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <div class="container">
+
+        <form class="" role="form">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="from">From</label>
+                        <select class="form-control" id="from">
+                            <option>Brubles</option>
+                            <option>Trubles</option>
+                            <option>Frubles</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="to">To</label>
+                        <select class="form-control" id="to">
+                            <option>Brubles</option>
+                            <option>Trubles</option>
+                            <option>Frubles</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="query">Query</label>
+                <input type="text input-lg" class="form-control" id="query" placeholder="Enter query"/>
+            </div>
+            <div class="form-group">
+                <label for="result">Result</label>
+                <input type="text input-lg" class="form-control" id="result" placeholder="Result"/>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+        <hr/>
+
+        <footer>
+            <p>&copy; UniFrases 2013</p>
+        </footer>
+
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script th:src="@{/resources/assets/js/jquery.js}" src="../../resources/assets/js/jquery.js"></script>
+    <script th:src="@{/resources/bootstrap/js/bootstrap.min.js}"
+            src="/resources/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
