@@ -120,7 +120,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <label for="from">From</label>
-                        <select class="form-control" id="from">
+                        <select class="form-control input-lg" id="from">
                             <option>Brubles</option>
                             <option>Trubles</option>
                             <option>Frubles</option>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="col-lg-6">
                         <label for="to">To</label>
-                        <select class="form-control" id="to">
+                        <select class="form-control input-lg" id="to">
                             <option>Brubles</option>
                             <option>Trubles</option>
                             <option>Frubles</option>
@@ -138,13 +138,19 @@
             </div>
             <div class="form-group">
                 <label for="query">Query</label>
-                <input type="text input-lg" class="form-control" id="query" placeholder="Enter query"/>
+                <div class="row">
+                    <div class="col-lg-11">
+                        <input type="text" class="form-control input-lg" id="query" placeholder="Enter query"/>
+                    </div>
+                    <div class="col-lg-1">
+                        <button id="btn-submit" type="submit" class="btn btn-default input-lg">Submit</button>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="result">Result</label>
-                <input type="text input-lg" class="form-control" id="result" placeholder="Result"/>
+            <div class="form-group" id="result" >
+                <label for="result-field">Result</label>
+                <input type="text" class="form-control input-lg" id="result-field" placeholder="Result"/>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
         </form>
 
         <hr/>
@@ -160,6 +166,15 @@
     <script th:src="@{/resources/assets/js/jquery.js}" src="../../resources/assets/js/jquery.js"></script>
     <script th:src="@{/resources/bootstrap/js/bootstrap.min.js}"
             src="/resources/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#result").hide();
+            $("#btn-submit").click(function(event) {
+                event.preventDefault();
+                $("#result").show();
+            });
+        });
+    </script>
 
 </body>
 
